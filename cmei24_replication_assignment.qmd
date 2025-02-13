@@ -1,0 +1,96 @@
+---
+title: "cmei_replication_assignment"
+author: "Christian Mei"
+format: html
+editor: visual
+---
+
+# Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China
+
+Load the data
+
+```{r}
+library(readxl)
+human_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 1)
+animal_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 2)
+```
+
+View the data
+
+```{r}
+head(human_isotope)
+```
+
+```{r}
+head(animal_isotope)
+```
+
+Get some summary stats
+
+```{r}
+summary(human_isotope)
+```
+
+Create dataset with the isotope values only
+
+```{r}
+human_isotope_new <- human_isotope %>%
+  rename(d13C = `δ13C`, d15N = `δ15N`) %>%
+  select(Lab_code, age_years, d13C, d15N) # Get 4 columns
+
+library(dplyr)
+
+# Create a new column 'age_category' based on conditions in 'age_years'
+human_isotope_new <- human_isotope_new %>%
+  mutate(Species = case_when(
+    age_years %in% c("adult", "40–50", "20–25", "~40", "45–50") ~ "adult human",
+    age_years %in% c("juvenile", "18–22", "20–15", "13–14", "18–20", "12–16", "11–13", "7–8", "11–16") ~ "sub-adult human",
+    TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
+  ))
+
+human_isotope_new <- human_isotope_new %>% select(Lab_code, Species, d13C, d15N)
+
+human_isotope_new
+```
+
+```{r}
+animal_isotope_new <- animal_isotope %>%
+  rename(d13C = `δ13C`, d15N = `δ15N`) %>%
+  select(Lab_code, Species, d13C, d15N)
+
+head(animal_isotope_new)
+```
+
+```{r}
+merged_data_set <- rbind(human_isotope_new, animal_isotope_new)
+head(merged_data_set)
+```
+
+```{r}
+merged_data_set$Species <- as.factor(merged_data_set$Species)
+str(merged_data_set)
+```
+
+Let's try to get the plot
+
+```{r}
+ggplot(merged_data_set, aes(x = d13C, y = d15N, color = Species)) +
+  geom_point() +  # Removed fill, used color inside aes()
+  labs(x = "δ13C (‰)", y = "δ15N (‰)") +
+  ylim(5,15) + xlim(-19,-6)
+  theme_classic()
+```
+
+```{r}
+human_isotope_barplot_data <- human_isotope_new %>%
+  mutate(Animal_diet_class = case_when(
+    Species %in% c("adult human", "sub-adult human") ~ "Human",
+    Species %in% c("Pig_adult", "Pig_subadult", "Dog") ~ "Omnivore",
+    Species %in% c("Cattle", "Horse", "Dog") ~ "Herbivore",
+    TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
+  ))
+
+human_isotope_barplot_data$Animal_diet_class <- as.factor(human_isotope_barplot_data$Animal_diet_class)
+
+head(human_isotope_barplot_data)
+```
