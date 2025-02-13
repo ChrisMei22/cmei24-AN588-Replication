@@ -82,7 +82,7 @@ ggplot(merged_data_set, aes(x = d13C, y = d15N, color = Species)) +
 ```
 
 ```{r}
-human_isotope_barplot_data <- human_isotope_new %>%
+isotope_barplot_data <- merged_data_set %>%
   mutate(Animal_diet_class = case_when(
     Species %in% c("adult human", "sub-adult human") ~ "Human",
     Species %in% c("Pig_adult", "Pig_subadult", "Dog") ~ "Omnivore",
@@ -90,7 +90,55 @@ human_isotope_barplot_data <- human_isotope_new %>%
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
 
-human_isotope_barplot_data$Animal_diet_class <- as.factor(human_isotope_barplot_data$Animal_diet_class)
+isotope_barplot_data$Animal_diet_class <- factor(isotope_barplot_data$Animal_diet_class, levels = c("Human", "Omnivore", "Herbivore")) #levels is used so that they appear in the order shown in the original figure
 
-head(human_isotope_barplot_data)
+str(isotope_barplot_data)
+```
+
+```{r}
+carbon_outliers <- isotope_barplot_data %>%
+  group_by(Animal_diet_class) %>%
+  mutate(
+    Q1 = quantile(d13C, 0.25, na.rm = TRUE),
+    Q3 = quantile(d13C, 0.75, na.rm = TRUE),
+    IQR = Q3 - Q1,
+    lower_bound = Q1 - 1.5 * IQR,
+    upper_bound = Q3 + 1.5 * IQR
+  ) %>%
+  filter(d13C < lower_bound | d13C > upper_bound)
+```
+
+```{r}
+box_carbon <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d13C)) +
+  geom_boxplot()+
+  labs(y = "δ13C (‰)") +
+  geom_text(data = carbon_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
+  theme_minimal() +
+  ylim(-17.5,-8)
+
+box_carbon
+```
+
+```{r}
+nitrogen_outliers <- isotope_barplot_data %>%
+  group_by(Animal_diet_class) %>%
+  mutate(
+    Q1 = quantile(d15N, 0.25, na.rm = TRUE),
+    Q3 = quantile(d15N, 0.75, na.rm = TRUE),
+    IQR = Q3 - Q1,
+    lower_bound = Q1 - 1.5 * IQR,
+    upper_bound = Q3 + 1.5 * IQR
+  ) %>%
+  filter(d15N < lower_bound | d15N > upper_bound)
+```
+
+```{r}
+box_nitrogen <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d15N)) +
+  geom_boxplot()+
+  labs(y = "δ15N (‰)") +
+  geom_text(data = nitrogen_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
+  theme_minimal() +
+  ylim(6,16)
+
+box_nitrogen
 ```
