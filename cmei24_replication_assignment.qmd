@@ -43,8 +43,8 @@ library(dplyr)
 # Create a new column 'age_category' based on conditions in 'age_years'
 human_isotope_new <- human_isotope_new %>%
   mutate(Species = case_when(
-    age_years %in% c("adult", "40–50", "20–25", "~40", "45–50") ~ "adult human",
-    age_years %in% c("juvenile", "18–22", "20–15", "13–14", "18–20", "12–16", "11–13", "7–8", "11–16") ~ "sub-adult human",
+    age_years %in% c("adult", "40–50", "20–25", "~40", "45–50", "18–20", "18–22", "20–15") ~ "adult human",
+    age_years %in% c("juvenile", "13–14", "12–16", "11–13", "7–8", "11–16") ~ "sub-adult human",
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
 
@@ -141,4 +141,95 @@ box_nitrogen <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d15N
   ylim(6,16)
 
 box_nitrogen
+```
+
+Descriptive Statistics
+
+```{r}
+
+# Calculate summary statistics for d13C and d15N by diet class
+summary_stats <- isotope_barplot_data %>%
+  group_by(Animal_diet_class) %>%
+  summarise(
+    sample_size = length(d13C),
+    mean_d13C = mean(d13C),
+    sd_d13C = sd(d13C),
+    range_d13C = max(d13C) - min(d13C),
+
+    mean_d15N = mean(d15N),
+    sd_d15N = sd(d15N),
+    range_d15N = max(d15N) - min(d15N)
+  ) %>%
+  arrange(Animal_diet_class)
+
+# View the result
+summary_stats
+```
+
+```{r}
+human_isotope_new
+```
+
+```{r}
+mann_test_c <- wilcox.test(d13C ~ Species,
+                         data = human_isotope_new,
+                         exact = FALSE)
+
+mann_test_n <- wilcox.test(d15N ~ Species,
+                         data = human_isotope_new,
+                         exact = FALSE)
+```
+
+```{r}
+young_human_isotope <- human_isotope_new %>%
+  mutate(d13C_young = case_when(
+    Species == "sub-adult human" ~ d13C,
+    TRUE ~ NA_real_
+  ))
+
+young_human_carbon <- young_human_isotope$d13C_young
+
+young_human_carbon <- young_human_carbon[!is.na(young_human_carbon)]
+
+n1 <- length(young_human_carbon)
+n1
+```
+
+```{r}
+adult_human_isotope <- human_isotope_new %>%
+  mutate(d13C_adult = case_when(
+    Species == "adult human" ~ d13C,
+    TRUE ~ NA_real_
+  ))
+
+adult_human_carbon <- adult_human_isotope$d13C_adult
+
+adult_human_carbon <- adult_human_carbon[!is.na(adult_human_carbon)]
+
+n2 <- length(adult_human_carbon)
+n2
+```
+
+Mann U Whitney Test
+
+```{r}
+W_c <- mann_test_c$statistic
+W_n <- mann_test_n$statistic
+
+z_score_c <- (W_c - (n1 * n2 / 2)) / sqrt((n1 * n2 * (n1 + n2 + 1)) / 12)
+z_score_n <- (W_n - (n1 * n2 / 2)) / sqrt((n1 * n2 * (n1 + n2 + 1)) / 12)
+```
+
+```{r}
+cat("Mann-Whitney U Test Results Carbon:\n")
+cat("W-statistic:", W_c, "\n")
+cat("Z-score:", round(z_score_c, 3), "\n")
+cat("p-value:", mann_test_c$p.value, "\n")
+```
+
+```{r}
+cat("Mann-Whitney U Test Results Carbon:\n")
+cat("W-statistic:", W_c, "\n")
+cat("Z-score:", round(z_score_n, 3), "\n")
+cat("p-value:", mann_test_n$p.value, "\n")
 ```
