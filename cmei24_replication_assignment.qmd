@@ -5,12 +5,21 @@ format: html
 editor: visual
 ---
 
-# Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China
+# Re-analysis of Dong et al. (2013) – Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China
+
+## Objectives
+
+## Background
+
+## Methods
+
+## Analysis
 
 Load the data
 
 ```{r}
 library(readxl)
+library(tidyverse)
 human_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 1)
 animal_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 2)
 ```
