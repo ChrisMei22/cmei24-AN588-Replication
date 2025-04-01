@@ -9,22 +9,50 @@ editor: visual
 
 ## Objectives
 
+The point of this exercise is to replicate some of the analyses and figures centered on carbon and nitrogen isotopic data collected from human and animal remains at the site of Qijiaping , China. However, I was unable to replicate some of the figures and tests when data from other papers got incorporated. For some reason, these articles were inaccessible to me and it would've been exciting to recreate all all of the figures from this 2013 study.
+
 ## Background
+
+During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that travelled through the Hexi Corridor at around 2000 BC.
+
+A cultural complex associated with this geographical and chronological region is the Qijia culture, named after the Qijiaping site (see map below) excavated in 1934 and 1975. This later excavation led to the collection of many human and animal skeletons along with cultural artifacts such as pottery, stone and bone tools and an earlt Chinese bronze mirror. This more comprehensive collection provided the researchers the opportunity to take a closer look at the human and animal remains to reconstruct their diets. The idea is that through exploration of their diets, they would be able to find evidence of an exchange of eastern and western cereals. If there was a strong western cereal influence in this region, then they would hypothesize a higher presence of barley in the human and animal diets.
+
+![This map will help us position ourselves geographically and shows the different Qijia cultural sites that the paper takes into account. However, due to the reasons stated in the `Objectives` section, I will only focus on the human and animal remains found at the site of Qijiaping marked by triangle number 4.](images/clipboard-234056985.png){fig-align="center"}
+
+The assumption that the Qijia culture experienced one of these intercontinental exchanges is due to the account of western influences being reflected in Qijia material culture and the presence of wheat and barley in archaeobotanical assemblages dating to the second millennium from Gansu and Qinghai provinces.
 
 ## Methods
 
+All the following analyses are based on carbon and nitrogen isotope data collected from animal and human remains at the site of Qijiaping. Stable isotope ratios in bone collagen reflect the average isotopic composition of an individual's dietary intake over a period of years. Archaeologists use δ13C values from bone remains to understand general patterns of dietary change (C3 versus C4 foodstuffs or marine versus terrestrial foodstuffs) across space and time. The distinction between C3 and C4 comes from the different mechanisms of CO2 uptake in the plant's photosynthetic pathway. Northern China has millet as their main C4 cereal. These crops have a distinct δ13C signal that can differentiate themselves from the natural vegetation, which is dominated by C3 plants and other C3 cereals (e.g. wheat, barley and rice).
+
+![This image will help you see the how we can distinguish between C4 and C3 plants based on their carbon isotope signals. Image sourced from [David Naafs](https://davidnaafs.wordpress.com/compound-specific-stable-carbon-isotopes-%CE%B413c/).](images/clipboard-3214647284.png){fig-align="center" width="500" height="442"}
+
+Nitrogen isotopes are a bit harder to understand. However, the simplified version of it is that nitrogen isotopic ratios (δ15N) reflect the position of an individual in the food chain and can give an estimation on the level of protein in the diet because δ15N values increase with trophic level. This might be more useful when trying to understand differences in diet in individuals belonging to different social classes.
+
+The samples collected from the Qijiaping site comprise of: 42 human (34 adults and eight subadults younger than 16 years of age) and 19 animal (nine pigs, two dogs, two horses and six cows) samples.
+
 ## Analysis
 
-Load the data
+### Step 1) Load the Data
+
+This paper displayed all of the data collected from Qijiaping samples on a Tables 1 and 2. In order to get the data, I had to copy and paste them on an excel file I created which I will include in the repository associated with the replication assignment. I made sure that all values were the same as the ones figured on the original tables since copy/paste errors are possible.
+
+I will first load the packages needed for the study:
 
 ```{r}
 library(readxl)
 library(tidyverse)
+library(dplyr)
+```
+
+Since I added the data in two separate sheets within my excel file, I used the `sheet =` argument to isolate the direct the human and animal isotope values to where they should be:
+
+```{r}
 human_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 1)
 animal_isotope <- read_excel("Dong_et_al_isotope_data.xlsx", sheet = 2)
 ```
 
-View the data
+Let's view the first columns of the data:
 
 ```{r}
 head(human_isotope)
@@ -34,22 +62,31 @@ head(human_isotope)
 head(animal_isotope)
 ```
 
-Get some summary stats
+And let's also get sum summary stats for the entire table
 
 ```{r}
 summary(human_isotope)
 ```
 
-Create dataset with the isotope values only
+```{r}
+summary(animal_isotope)
+```
+
+### Step 2) Clean data
+
+One of the important comparisons made in the paper was regarding the age of animals and humans. These were divided into adult and sub-adult. For humans, ages from 16 and upwards were labeled as adults:
+
+> "There are 42 human (34 adults and eight subadults younger than 16 years of age)"
+
+This required manually changing the age values into their respective age category. The animal dataset was already correctly categorized into age categories.
 
 ```{r}
 human_isotope_new <- human_isotope %>%
-  rename(d13C = `δ13C`, d15N = `δ15N`) %>%
+  rename(d13C = `δ13C`, d15N = `δ15N`) %>% # Renaming the delta columns to make it easier down the line
   select(Lab_code, age_years, d13C, d15N) # Get 4 columns
 
-library(dplyr)
 
-# Create a new column 'age_category' based on conditions in 'age_years'
+# Create a new column 'Species' based on conditions in 'age_years'
 human_isotope_new <- human_isotope_new %>%
   mutate(Species = case_when(
     age_years %in% c("adult", "40–50", "20–25", "~40", "45–50", "18–20", "18–22", "20–15") ~ "adult human",
@@ -57,56 +94,73 @@ human_isotope_new <- human_isotope_new %>%
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
 
-human_isotope_new <- human_isotope_new %>% select(Lab_code, Species, d13C, d15N)
+human_isotope_new <- human_isotope_new %>% select(Lab_code, Species, d13C, d15N) # Only extract columns that we want
 
-human_isotope_new
+head(human_isotope_new)
 ```
 
 ```{r}
 animal_isotope_new <- animal_isotope %>%
-  rename(d13C = `δ13C`, d15N = `δ15N`) %>%
+  rename(d13C = `δ13C`, d15N = `δ15N`) %>% # For animals, we're only going to change the delta column names
   select(Lab_code, Species, d13C, d15N)
 
 head(animal_isotope_new)
 ```
+
+Since we will need to create a scatterplot incorporating both animal and human data, I decided to merge both datasets into a big one.
 
 ```{r}
 merged_data_set <- rbind(human_isotope_new, animal_isotope_new)
 head(merged_data_set)
 ```
 
+I also turned the Species column as a factor to facilitate labeling when plotting the scatterplot.
+
 ```{r}
 merged_data_set$Species <- as.factor(merged_data_set$Species)
 str(merged_data_set)
 ```
 
-Let's try to get the plot
+### Step 3) Recreating Figure 2
+
+It's time to recreate Figure 2 from the paper. This scatterplot is meant to map both carbon and nitrogen isotope signals for each sample. Instead of using shapes to determine the different species, I stuck to colors. The resulting figure fully recapitulates what is seen in the paper. See below:
 
 ```{r}
 ggplot(merged_data_set, aes(x = d13C, y = d15N, color = Species)) +
   geom_point() +  # Removed fill, used color inside aes()
   labs(x = "δ13C (‰)", y = "δ15N (‰)") +
-  ylim(5,15) + xlim(-19,-6)
-  theme_classic()
+  ylim(5,15) + xlim(-19,-6) +
+  theme_minimal()
 ```
+
+Here is the original Figure 2:
+
+![](images/clipboard-573905272.png){fig-align="center" width="670"}
+
+Based on this figure, we can see that based on δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.
+
+### Descriptive Statistics
+
+The researchers then take a closer look at the carbon and nitrogen isotope values when they are categorized by their diet class. To do this, I decided to create a new column called `Animal_diet_class` where *Humans* were their own category; pig and dog were considered *Omnivores;* and horse and cattle were annotated as *Herbivore*. I will be recreating Figure 3 and Table 4.
 
 ```{r}
 isotope_barplot_data <- merged_data_set %>%
   mutate(Animal_diet_class = case_when(
     Species %in% c("adult human", "sub-adult human") ~ "Human",
     Species %in% c("Pig_adult", "Pig_subadult", "Dog") ~ "Omnivore",
-    Species %in% c("Cattle", "Horse", "Dog") ~ "Herbivore",
+    Species %in% c("Cattle", "Horse") ~ "Herbivore",
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
-
-isotope_barplot_data$Animal_diet_class <- factor(isotope_barplot_data$Animal_diet_class, levels = c("Human", "Omnivore", "Herbivore")) #levels is used so that they appear in the order shown in the original figure
+isotope_barplot_data$Animal_diet_class <- factor(isotope_barplot_data$Animal_diet_class, levels = c("Human", "Omnivore", "Herbivore")) #factor and relevel using the level argument so that diet classes appear in the order shown in the original figure
 
 str(isotope_barplot_data)
 ```
 
+Figure 2 also displays important outliers by their sample ID. To do this we need to extract the `Lab_code` of the datapoints that lie outside 1.5 × IQR above the third quartile (Q3) or below the first quartile (Q1).
+
 ```{r}
 carbon_outliers <- isotope_barplot_data %>%
-  group_by(Animal_diet_class) %>%
+  group_by(Animal_diet_class) %>% # We need this step so that we don't get outliers for the entire dataset
   mutate(
     Q1 = quantile(d13C, 0.25, na.rm = TRUE),
     Q3 = quantile(d13C, 0.75, na.rm = TRUE),
@@ -117,16 +171,20 @@ carbon_outliers <- isotope_barplot_data %>%
   filter(d13C < lower_bound | d13C > upper_bound)
 ```
 
+Now we can plot the boxplot using `gglopt2`:
+
 ```{r}
 box_carbon <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d13C)) +
-  geom_boxplot()+
-  labs(y = "δ13C (‰)") +
+  geom_boxplot(width = 0.25, fill = "lightgrey")+
+  labs(y = "δ13C (‰)", x = "Diet Class") +
   geom_text(data = carbon_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
-  theme_minimal() +
-  ylim(-17.5,-8)
+  scale_x_discrete(labels = c("Human \n n = 42", "Omnivores \n (Pig & Dog) \n n = 11", "Herbivores \n (Cattle & Horse) \n n = 8")) +
+  theme_minimal()
 
 box_carbon
 ```
+
+We will do the same for nitrogen signals!
 
 ```{r}
 nitrogen_outliers <- isotope_barplot_data %>%
@@ -143,16 +201,30 @@ nitrogen_outliers <- isotope_barplot_data %>%
 
 ```{r}
 box_nitrogen <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d15N)) +
-  geom_boxplot()+
-  labs(y = "δ15N (‰)") +
+  geom_boxplot(width = 0.25, fill = "lightgrey")+
+  labs(y = "δ15N (‰)", x = "Diet Class") +
   geom_text(data = nitrogen_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
   theme_minimal() +
-  ylim(6,16)
+  scale_x_discrete(labels = c("Human \n n = 42", "Omnivores \n (Pig & Dog) \n n = 11", "Herbivores \n (Cattle & Horse) \n n = 8")) + # This was the lazy and easiest way to include the number of samples per group in the boxplot
+  coord_cartesian(ylim = c(5,16))
+
+
 
 box_nitrogen
 ```
 
-Descriptive Statistics
+Now let's add combine these into a single panel to make it look more like the original
+
+```{r}
+library(gridExtra)
+grid.arrange(box_carbon, box_nitrogen, ncol = 2)
+```
+
+This is how Figure 2 looks like in the paper:
+
+![](images/clipboard-520538280.png)
+
+To finish this section on the descriptive stats of this paper, we will build a table that will offer the means, SD, and range of our carbon and nitrogen isotope data. The data will also be grouped by diet class
 
 ```{r}
 
@@ -175,19 +247,93 @@ summary_stats <- isotope_barplot_data %>%
 summary_stats
 ```
 
-```{r}
-human_isotope_new
-```
+Here's Table 4 from the paper:
+
+![](images/Screenshot 2025-04-01 at 4.16.24 PM.png)
+
+This is great! This analysis just recapitulates what Figure 2 told us about the overall diet composition of humans and animals at the Qijiaping site. Looking at Table 4 and Figure 3, we can confirm that:
+
+> Herbivore δ^15^N values fall within a narrow range from 6.7‰ to 8.5‰ (mean = 7.4 ± 0.7‰). The δ^15^N values of dogs and pigs have a range of 6.0–8.7‰ with a mean of 7.4 ± 0.7‰.
+
+> The human δ^13^C values range from −13.4‰ to −7.5‰ (*n* = 42), with a mean of −8.9 ± 1.1‰. The δ^15^N values range from 8.9‰ to 14.1‰ (*n* = 42), with a mean of 9.8 ± 0.9‰.
+
+Looking at my recreation of Figure 3, we also find the 3 outlier human samples in the δ^15^N analysis. Among these individuals (QJP232, QJP240 and QJP236), QJP232 and QJP240 were considered extreme outliers. Moreover, the researchers state that:
+
+> The enrichment of 6.7‰ (QJP232) is too high to be interpreted as the difference of a single trophic level.
+
+Although δ^13^C and δ^15^N isotope ratios are not commonly used to trace human mobility, the researchers conclude that a possible theory explaining these outlier values is that "both QJP232 and QJP240 moved from surrounding areas where people ate different diets."
+
+### Inferential Statistics
+
+The researchers were also interested to see if there were importantδ^13^C and δ^15^N differences between adults and sub-adults (16 years and below). In the paper, they state:
+
+> No significant isotopic differences were found between subadults and adults (**Z = −0.737, P = 0.461 for δ^13^C and Z = −0.913, P = 0.361 for δ^15^N**), a result indicating that the dietary difference between subadults and adults is not statistically significant.
+
+In the methods section, they describe that:
+
+> Differences in mean isotope values among age groups and different sites were determined with Mann–Whitney tests. The significance level was set at *p* \< 0.05. All statistical analyses were performed with SPSS15.0 for Windows (SPSS, USA).
+
+With that, let's get into our Mann-Whitney test!
+
+First, let's see the layout of the dataset we'll be using:
 
 ```{r}
-mann_test_c <- wilcox.test(d13C ~ Species,
+head(human_isotope_new)
+```
+
+We can use the `wilcox.test()` to run a two-sample Wilcoxon test which is also known as 'Mann-Whitney' test.
+
+```{r}
+mann_test_c <- wilcox.test(d13C ~ as.factor(Species), # Establishing Species as factor
                          data = human_isotope_new,
                          exact = FALSE)
 
-mann_test_n <- wilcox.test(d15N ~ Species,
+mann_test_c
+```
+
+Did the same thing for nitrogen values:
+
+```{r}
+
+mann_test_n <- wilcox.test(d15N ~ as.factor(Species),
                          data = human_isotope_new,
                          exact = FALSE)
+
+mann_test_n
 ```
+
+Here's when I noticed 2 things:
+
+1.  The test outputs a Z score while my `wilcox.test()` spits out a W score.
+2.  My p-values do not match the ones reported by the study, although they both report non-significant (p\>0.05) values.
+
+I wanted to first address the Z-score problem by figuring out how I can derive it from the output that I got. After some digging, I came across this formula to convert W to Z score:
+
+$$
+Z = \frac{W - \mu_W}{\sigma_W}
+$$
+
+Where μW​ is the **mean** of the W statistic under the null hypothesis and σW​ is the standard deviation of W under the null hypothesis.
+
+$$
+μW​=\frac{n1​⋅n2}{2}​​
+$$
+
+and
+
+$$
+\sigma_W = \sqrt{ \frac{n_1 \cdot n_2 \cdot (n_1 + n_2 + 1)}{12} }
+$$
+
+Making the Z score calculation:
+
+$$
+Z = \frac{W - \frac{n_1 n_2}{2}}{\sqrt{ \frac{n_1 n_2 (n_1 + n_2 + 1)}{12} }}
+$$
+
+source: <https://datatab.net/tutorial/mann-whitney-u-test>
+
+So with that, let's first find out the number of subadult and adult samples I have which should be 8 and 34 respectively.
 
 ```{r}
 young_human_isotope <- human_isotope_new %>%
@@ -219,26 +365,37 @@ n2 <- length(adult_human_carbon)
 n2
 ```
 
-Mann U Whitney Test
+Now let's run the W to Z conversion formula:
 
 ```{r}
 W_c <- mann_test_c$statistic
 W_n <- mann_test_n$statistic
 
+
 z_score_c <- (W_c - (n1 * n2 / 2)) / sqrt((n1 * n2 * (n1 + n2 + 1)) / 12)
 z_score_n <- (W_n - (n1 * n2 / 2)) / sqrt((n1 * n2 * (n1 + n2 + 1)) / 12)
 ```
 
+And concatenate the results in a nice printout:
+
 ```{r}
-cat("Mann-Whitney U Test Results Carbon:\n")
+cat("δ13C Mann-Whitney U Test Results:\n")
 cat("W-statistic:", W_c, "\n")
 cat("Z-score:", round(z_score_c, 3), "\n")
 cat("p-value:", mann_test_c$p.value, "\n")
 ```
 
 ```{r}
-cat("Mann-Whitney U Test Results Carbon:\n")
-cat("W-statistic:", W_c, "\n")
+cat("δ15N Mann-Whitney U Test Results:\n")
+cat("W-statistic:", W_n, "\n")
 cat("Z-score:", round(z_score_n, 3), "\n")
 cat("p-value:", mann_test_n$p.value, "\n")
 ```
+
+Here's the values provided by the paper:
+
+> Z = −0.737, P = 0.461 for δ^13^C
+>
+> Z = −0.913, P = 0.361 for δ^15^N
+
+While my values are different, the inference is the same! That dietary difference between subadults and adults is not statistically significant.
