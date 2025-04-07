@@ -286,7 +286,7 @@ We can use the `wilcox.test()` to run a two-sample Wilcoxon test which is also k
 ```{r}
 mann_test_c <- wilcox.test(d13C ~ as.factor(Species), # Establishing Species as factor
                          data = human_isotope_new,
-                         exact = FALSE)
+                         exact = FALSE, correct = TRUE)
 
 mann_test_c
 ```
@@ -297,7 +297,7 @@ Did the same thing for nitrogen values:
 
 mann_test_n <- wilcox.test(d15N ~ as.factor(Species),
                          data = human_isotope_new,
-                         exact = FALSE)
+                         exact = FALSE, correct = TRUE)
 
 mann_test_n
 ```
@@ -398,4 +398,14 @@ Here's the values provided by the paper:
 >
 > Z = −0.913, P = 0.361 for δ^15^N
 
-While my values are different, the inference is the same! That dietary difference between subadults and adults is not statistically significant.
+While my values are different, the inference is the same! Both values show that dietary differences between subadults and adults are not statistically significant.
+
+To understand why my values differ from the Dong et al. (2013) results, I re-read the paper and noticed that they use SPSS to calculate the Mann Whitney test. However, according to these sources below, there might not be an important difference in the calculation that might result in this discrepancy.
+
+<https://datatab.net/tutorial/wilcoxon-test>
+
+<https://www.spss-tutorials.com/spss-mann-whitney-test-simple-example/>
+
+I also manually calculated the Mann Whitney U test using this website and it extremely similar values to what came out in R.
+
+Therefore, the cause might lie in the data. Before running the Mann Whitney U test, I made sure that I had the correct sample of adults and subadults which were 34 and 8 respectively. I did this separation based on the 16 year old threshold stated by the paper. In theory, I should have the same sample. What are some theoretical ways things could've gone wrong?
