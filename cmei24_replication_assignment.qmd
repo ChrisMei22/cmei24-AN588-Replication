@@ -408,4 +408,4 @@ To understand why my values differ from the Dong et al. (2013) results, I re-rea
 
 I also manually calculated the Mann Whitney U test using this website and it extremely similar values to what came out in R.
 
-Therefore, the cause might lie in the data. Before running the Mann Whitney U test, I made sure that I had the correct sample of adults and subadults which were 34 and 8 respectively. I did this separation based on the 16 year old threshold stated by the paper. In theory, I should have the same sample. What are some theoretical ways things could've gone wrong?
+Therefore, the cause might lie in the data. Before running the Mann Whitney U test, I made sure that I had the correct sample of adults and subadults which were 34 and 8 respectively. I made this separation based on the 16 year old threshold stated by the paper. In theory, I should have the same sample and the test should yield near identical W and Z scores. This discrepancy therefore could be attributed to the accuracy of the isotope values - e.g decimal places - for each sample.
