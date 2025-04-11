@@ -249,7 +249,7 @@ summary_stats
 
 Here's Table 4 from the paper:
 
-![](images/Screenshot%202025-04-01%20at%204.16.24%20PM.png)
+![](images/Screenshot 2025-04-11 at 12.46.06 PM.png)
 
 This is great! This analysis just recapitulates what Figure 2 told us about the overall diet composition of humans and animals at the Qijiaping site. Looking at Table 4 and Figure 3, we can confirm that:
 
