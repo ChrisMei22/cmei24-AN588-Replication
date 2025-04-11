@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Christian Mei">
+
+<title>Re-analysis of Dong et al.&nbsp;(2013) – Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="cmei24_replication_assignment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cmei24_replication_assignment_files/libs/quarto-html/quarto.js"></script>
+<script src="cmei24_replication_assignment_files/libs/quarto-html/popper.min.js"></script>
+<script src="cmei24_replication_assignment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cmei24_replication_assignment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cmei24_replication_assignment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cmei24_replication_assignment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="cmei24_replication_assignment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cmei24_replication_assignment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cmei24_replication_assignment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Re-analysis of Dong et al.&nbsp;(2013) – Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Christian Mei </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-353649242.png" class="img-fluid figure-img" width="773"></p>
+<figcaption>Bronze mirror, Gansu. Qijia culture (2400–1900) National Museum of China.</figcaption>
+</figure>
+</div>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>The point of this exercise is to replicate some of the analyses and figures centered on carbon and nitrogen isotopic data collected from human and animal remains at the site of Qijiaping , China. However, I was unable to replicate some of the figures and tests when data from other papers got incorporated. For some reason, these articles were inaccessible to me and it would’ve been exciting to recreate all all of the figures from this 2013 study.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that travelled through the Hexi Corridor at around 2000 BC.</p>
+<p>A cultural complex associated with this geographical and chronological region is the Qijia culture, named after the Qijiaping site (see map below) excavated in 1934 and 1975. This later excavation led to the collection of many human and animal skeletons along with cultural artifacts such as pottery, stone and bone tools and an earlt Chinese bronze mirror. This more comprehensive collection provided the researchers the opportunity to take a closer look at the human and animal remains to reconstruct their diets. The idea is that through exploration of their diets, they would be able to find evidence of an exchange of eastern and western cereals. If there was a strong western cereal influence in this region, then they would hypothesize a higher presence of barley in the human and animal diets.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-234056985.png" class="img-fluid figure-img"></p>
+<figcaption>This map will help us position ourselves geographically and shows the different Qijia cultural sites that the paper takes into account. However, due to the reasons stated in the <code>Objectives</code> section, I will only focus on the human and animal remains found at the site of Qijiaping marked by triangle number 4.</figcaption>
+</figure>
+</div>
+<p>The assumption that the Qijia culture experienced one of these intercontinental exchanges is due to the account of western influences being reflected in Qijia material culture and the presence of wheat and barley in archaeobotanical assemblages dating to the second millennium from Gansu and Qinghai provinces.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>All the following analyses are based on carbon and nitrogen isotope data collected from animal and human remains at the site of Qijiaping. Stable isotope ratios in bone collagen reflect the average isotopic composition of an individual’s dietary intake over a period of years. Archaeologists use δ13C values from bone remains to understand general patterns of dietary change (C3 versus C4 foodstuffs or marine versus terrestrial foodstuffs) across space and time. The distinction between C3 and C4 comes from the different mechanisms of CO2 uptake in the plant’s photosynthetic pathway. Northern China has millet as their main C4 cereal. These crops have a distinct δ13C signal that can differentiate themselves from the natural vegetation, which is dominated by C3 plants and other C3 cereals (e.g.&nbsp;wheat, barley and rice).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-3214647284.png" width="500" height="442" class="figure-img"></p>
+<figcaption>This image will help you see the how we can distinguish between C4 and C3 plants based on their carbon isotope signals. Image sourced from <a href="https://davidnaafs.wordpress.com/compound-specific-stable-carbon-isotopes-%CE%B413c/">David Naafs</a>.</figcaption>
+</figure>
+</div>
+<p>Nitrogen isotopes are a bit harder to understand. However, the simplified version of it is that nitrogen isotopic ratios (δ15N) reflect the position of an individual in the food chain and can give an estimation on the level of protein in the diet because δ15N values increase with trophic level. This might be more useful when trying to understand differences in diet in individuals belonging to different social classes.</p>
+<p>The samples collected from the Qijiaping site comprise of: 42 human (34 adults and eight subadults younger than 16 years of age) and 19 animal (nine pigs, two dogs, two horses and six cows) samples.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="step-1-load-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-load-the-data">Step 1) Load the Data</h3>
+<p>This paper displayed all of the data collected from Qijiaping samples on a Tables 1 and 2. In order to get the data, I had to copy and paste them on an excel file I created which I will include in the repository associated with the replication assignment. I made sure that all values were the same as the ones figured on the original tables since copy/paste errors are possible.</p>
+<p>I will first load the packages needed for the study:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Since I added the data in two separate sheets within my excel file, I used the <code>sheet =</code> argument to isolate the direct the human and animal isotope values to where they should be:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>human_isotope <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"Dong_et_al_isotope_data.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>animal_isotope <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"Dong_et_al_isotope_data.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s view the first columns of the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_isotope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  Lab_code Provenience age_years Skeletal_element `Collagen_wt.%` `Cwt.%`
+  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;                      &lt;dbl&gt;   &lt;dbl&gt;
+1 QJP211   M10-1,      45–50     Rib                         14.6    51  
+2 QJP212   M10-2,      20–25     Clavicle                     6.9    44.7
+3 QJP214   M22-1,      adult     Phalanx                     13.4    43.6
+4 QJP215   M22-4-1,    40–50     Radius                      13.9    42.4
+5 QJP217   M22-4-4,    adult     Femur                        8      44.2
+6 QJP218   M25-1,      ~40       Mandible                    12.2    42.8
+# ℹ 4 more variables: `Nwt.%` &lt;dbl&gt;, `C:N` &lt;dbl&gt;, δ13C &lt;dbl&gt;, δ15N &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(animal_isotope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 9
+  Lab_code Species      Skeletal_element `Collagen_wt.%` `C_wt.%` `N_wt.%` `C:N`
+  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;                      &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1 QJP253   Pig_subadult Scapula                     13.2     47.5     17.3   3.2
+2 QJP254   Pig_subadult Skull                       12.6     46.5     17     3.2
+3 QJP262   Pig_subadult Mandible                    11.1     47.5     17.3   3.2
+4 QJP263   Pig_subadult Mandible                     8       47.2     17.1   3.2
+5 QJP255   Pig_adult    Tibia                       15       43.4     16     3.2
+6 QJP256   Pig_adult    Pelvis                      11.8     46       16.8   3.2
+# ℹ 2 more variables: δ13C &lt;dbl&gt;, δ15N &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>And let’s also get sum summary stats for the entire table</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(human_isotope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Lab_code         Provenience         age_years         Skeletal_element  
+ Length:42          Length:42          Length:42          Length:42         
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+ Collagen_wt.%        Cwt.%           Nwt.%            C:N       
+ Min.   : 1.300   Min.   :41.70   Min.   :15.30   Min.   :3.100  
+ 1st Qu.: 5.775   1st Qu.:44.00   1st Qu.:16.20   1st Qu.:3.200  
+ Median :10.000   Median :44.85   Median :16.40   Median :3.200  
+ Mean   : 9.695   Mean   :45.27   Mean   :16.59   Mean   :3.198  
+ 3rd Qu.:13.325   3rd Qu.:46.50   3rd Qu.:17.00   3rd Qu.:3.200  
+ Max.   :16.600   Max.   :51.00   Max.   :18.60   Max.   :3.200  
+      δ13C              δ15N       
+ Min.   :-13.400   Min.   : 8.900  
+ 1st Qu.: -8.900   1st Qu.: 9.300  
+ Median : -8.650   Median : 9.700  
+ Mean   : -8.855   Mean   : 9.819  
+ 3rd Qu.: -8.250   3rd Qu.:10.000  
+ Max.   : -7.500   Max.   :14.100  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(animal_isotope)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Lab_code           Species          Skeletal_element   Collagen_wt.%  
+ Length:19          Length:19          Length:19          Min.   : 8.00  
+ Class :character   Class :character   Class :character   1st Qu.:12.50  
+ Mode  :character   Mode  :character   Mode  :character   Median :13.90  
+                                                          Mean   :13.69  
+                                                          3rd Qu.:15.30  
+                                                          Max.   :16.50  
+     C_wt.%          N_wt.%           C:N           δ13C             δ15N      
+ Min.   :41.60   Min.   :15.30   Min.   :3.2   Min.   :-17.80   Min.   :6.000  
+ 1st Qu.:44.55   1st Qu.:16.35   1st Qu.:3.2   1st Qu.:-16.75   1st Qu.:7.000  
+ Median :46.00   Median :16.80   Median :3.2   Median :-13.00   Median :7.300  
+ Mean   :45.66   Mean   :16.70   Mean   :3.2   Mean   :-12.77   Mean   :7.395  
+ 3rd Qu.:46.90   3rd Qu.:17.10   3rd Qu.:3.2   3rd Qu.: -9.50   3rd Qu.:7.650  
+ Max.   :48.80   Max.   :17.80   Max.   :3.2   Max.   : -7.10   Max.   :8.700  </code></pre>
+</div>
+</div>
+</section>
+<section id="step-2-clean-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-clean-data">Step 2) Clean data</h3>
+<p>One of the important comparisons made in the paper was regarding the age of animals and humans. These were divided into adult and sub-adult. For humans, ages from 16 and upwards were labeled as adults:</p>
+<blockquote class="blockquote">
+<p>“There are 42 human (34 adults and eight subadults younger than 16 years of age)”</p>
+</blockquote>
+<p>This required manually changing the age values into their respective age category. The animal dataset was already correctly categorized into age categories.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>human_isotope_new <span class="ot">&lt;-</span> human_isotope <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">d13C =</span> <span class="st">`</span><span class="at">δ13C</span><span class="st">`</span>, <span class="at">d15N =</span> <span class="st">`</span><span class="at">δ15N</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="co"># Renaming the delta columns to make it easier down the line</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Lab_code, age_years, d13C, d15N) <span class="co"># Get 4 columns</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column 'Species' based on conditions in 'age_years'</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>human_isotope_new <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Species =</span> <span class="fu">case_when</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"adult"</span>, <span class="st">"40–50"</span>, <span class="st">"20–25"</span>, <span class="st">"~40"</span>, <span class="st">"45–50"</span>, <span class="st">"18–20"</span>, <span class="st">"18–22"</span>, <span class="st">"20–15"</span>) <span class="sc">~</span> <span class="st">"adult human"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"juvenile"</span>, <span class="st">"13–14"</span>, <span class="st">"12–16"</span>, <span class="st">"11–13"</span>, <span class="st">"7–8"</span>, <span class="st">"11–16"</span>) <span class="sc">~</span> <span class="st">"sub-adult human"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"unknown"</span>  <span class="co"># Optional: Assign "unknown" if the value doesn't match any category</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>human_isotope_new <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span> <span class="fu">select</span>(Lab_code, Species, d13C, d15N) <span class="co"># Only extract columns that we want</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Lab_code Species      d13C  d15N
+  &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+1 QJP211   adult human  -9.6   9.8
+2 QJP212   adult human  -9.1   9.8
+3 QJP214   adult human  -7.5   9  
+4 QJP215   adult human  -8.2  10  
+5 QJP217   adult human  -8.4   9.3
+6 QJP218   adult human -10.7   9.6</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>animal_isotope_new <span class="ot">&lt;-</span> animal_isotope <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">d13C =</span> <span class="st">`</span><span class="at">δ13C</span><span class="st">`</span>, <span class="at">d15N =</span> <span class="st">`</span><span class="at">δ15N</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="co"># For animals, we're only going to change the delta column names</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Lab_code, Species, d13C, d15N)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(animal_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Lab_code Species       d13C  d15N
+  &lt;chr&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;
+1 QJP253   Pig_subadult  -8     8.1
+2 QJP254   Pig_subadult  -8.3   7.6
+3 QJP262   Pig_subadult  -9.2   7.1
+4 QJP263   Pig_subadult  -7.1   8.7
+5 QJP255   Pig_adult    -17.5   6  
+6 QJP256   Pig_adult     -7.9   7.3</code></pre>
+</div>
+</div>
+<p>Since we will need to create a scatterplot incorporating both animal and human data, I decided to merge both datasets into a big one.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>merged_data_set <span class="ot">&lt;-</span> <span class="fu">rbind</span>(human_isotope_new, animal_isotope_new)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(merged_data_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Lab_code Species      d13C  d15N
+  &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+1 QJP211   adult human  -9.6   9.8
+2 QJP212   adult human  -9.1   9.8
+3 QJP214   adult human  -7.5   9  
+4 QJP215   adult human  -8.2  10  
+5 QJP217   adult human  -8.4   9.3
+6 QJP218   adult human -10.7   9.6</code></pre>
+</div>
+</div>
+<p>I also turned the Species column as a factor to facilitate labeling when plotting the scatterplot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>merged_data_set<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(merged_data_set<span class="sc">$</span>Species)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(merged_data_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [61 × 4] (S3: tbl_df/tbl/data.frame)
+ $ Lab_code: chr [1:61] "QJP211" "QJP212" "QJP214" "QJP215" ...
+ $ Species : Factor w/ 7 levels "adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ d13C    : num [1:61] -9.6 -9.1 -7.5 -8.2 -8.4 -10.7 -8.6 -8.4 -8.1 -11 ...
+ $ d15N    : num [1:61] 9.8 9.8 9 10 9.3 9.6 9.2 9.2 9.3 9.6 ...</code></pre>
+</div>
+</div>
+</section>
+<section id="step-3-recreating-figure-2" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-recreating-figure-2">Step 3) Recreating Figure 2</h3>
+<p>It’s time to recreate Figure 2 from the paper. This scatterplot is meant to map both carbon and nitrogen isotope signals for each sample. Instead of using shapes to determine the different species, I stuck to colors. The resulting figure fully recapitulates what is seen in the paper. See below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data_set, <span class="fu">aes</span>(<span class="at">x =</span> d13C, <span class="at">y =</span> d15N, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  <span class="co"># Removed fill, used color inside aes()</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">y =</span> <span class="st">"δ15N (‰)"</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">5</span>,<span class="dv">15</span>) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">19</span>,<span class="sc">-</span><span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is the original Figure 2:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-573905272.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="670"></p>
+</figure>
+</div>
+<p>Based on this figure, we can see that based on δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.</p>
+</section>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
+<p>The researchers then take a closer look at the carbon and nitrogen isotope values when they are categorized by their diet class. To do this, I decided to create a new column called <code>Animal_diet_class</code> where <em>Humans</em> were their own category; pig and dog were considered <em>Omnivores;</em> and horse and cattle were annotated as <em>Herbivore</em>. I will be recreating Figure 3 and Table 4.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data <span class="ot">&lt;-</span> merged_data_set <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Animal_diet_class =</span> <span class="fu">case_when</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"adult human"</span>, <span class="st">"sub-adult human"</span>) <span class="sc">~</span> <span class="st">"Human"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Pig_adult"</span>, <span class="st">"Pig_subadult"</span>, <span class="st">"Dog"</span>) <span class="sc">~</span> <span class="st">"Omnivore"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cattle"</span>, <span class="st">"Horse"</span>) <span class="sc">~</span> <span class="st">"Herbivore"</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"unknown"</span>  <span class="co"># Optional: Assign "unknown" if the value doesn't match any category</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data<span class="sc">$</span>Animal_diet_class <span class="ot">&lt;-</span> <span class="fu">factor</span>(isotope_barplot_data<span class="sc">$</span>Animal_diet_class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Human"</span>, <span class="st">"Omnivore"</span>, <span class="st">"Herbivore"</span>)) <span class="co">#factor and relevel using the level argument so that diet classes appear in the order shown in the original figure</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(isotope_barplot_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [61 × 5] (S3: tbl_df/tbl/data.frame)
+ $ Lab_code         : chr [1:61] "QJP211" "QJP212" "QJP214" "QJP215" ...
+ $ Species          : Factor w/ 7 levels "adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ d13C             : num [1:61] -9.6 -9.1 -7.5 -8.2 -8.4 -10.7 -8.6 -8.4 -8.1 -11 ...
+ $ d15N             : num [1:61] 9.8 9.8 9 10 9.3 9.6 9.2 9.2 9.3 9.6 ...
+ $ Animal_diet_class: Factor w/ 3 levels "Human","Omnivore",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+</div>
+</div>
+<p>Figure 2 also displays important outliers by their sample ID. To do this we need to extract the <code>Lab_code</code> of the datapoints that lie outside 1.5 × IQR above the third quartile (Q3) or below the first quartile (Q1).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>carbon_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span> <span class="co"># We need this step so that we don't get outliers for the entire dataset</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d13C <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d13C <span class="sc">&gt;</span> upper_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can plot the boxplot using <code>gglopt2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>box_carbon <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d13C)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> carbon_outliers, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>box_carbon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We will do the same for nitrogen signals!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>nitrogen_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d15N <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d15N <span class="sc">&gt;</span> upper_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>box_nitrogen <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d15N)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ15N (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> nitrogen_outliers, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span> <span class="co"># This was the lazy and easiest way to include the number of samples per group in the boxplot</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">16</span>))</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>box_nitrogen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now let’s add combine these into a single panel to make it look more like the original</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gridExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    combine</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(box_carbon, box_nitrogen, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This is how Figure 2 looks like in the paper:</p>
+<p><img src="images/clipboard-520538280.png" class="img-fluid"></p>
+<p>To finish this section on the descriptive stats of this paper, we will build a table that will offer the means, SD, and range of our carbon and nitrogen isotope data. The data will also be grouped by diet class</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics for d13C and d15N by diet class</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_size =</span> <span class="fu">length</span>(d13C),</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d13C =</span> <span class="fu">mean</span>(d13C),</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d13C =</span> <span class="fu">sd</span>(d13C),</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d13C =</span> <span class="fu">max</span>(d13C) <span class="sc">-</span> <span class="fu">min</span>(d13C),</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d15N =</span> <span class="fu">mean</span>(d15N),</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d15N =</span> <span class="fu">sd</span>(d15N),</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d15N =</span> <span class="fu">max</span>(d15N) <span class="sc">-</span> <span class="fu">min</span>(d15N)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Animal_diet_class)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>summary_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 8
+  Animal_diet_class sample_size mean_d13C sd_d13C range_d13C mean_d15N sd_d15N
+  &lt;fct&gt;                   &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+1 Human                      42     -8.85    1.06        5.9      9.82   0.912
+2 Omnivore                   11    -10.2     2.93       10.4      7.44   0.665
+3 Herbivore                   8    -16.4     1.54        4.8      7.34   0.705
+# ℹ 1 more variable: range_d15N &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Here’s Table 4 from the paper:</p>
+<p><img src="images/table_4.png" class="img-fluid"></p>
+<p>This is great! This analysis just recapitulates what Figure 2 told us about the overall diet composition of humans and animals at the Qijiaping site. Looking at Table 4 and Figure 3, we can confirm that:</p>
+<blockquote class="blockquote">
+<p>Herbivore δ<sup>15</sup>N values fall within a narrow range from 6.7‰ to 8.5‰ (mean = 7.4 ± 0.7‰). The δ<sup>15</sup>N values of dogs and pigs have a range of 6.0–8.7‰ with a mean of 7.4 ± 0.7‰.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The human δ<sup>13</sup>C values range from −13.4‰ to −7.5‰ (<em>n</em> = 42), with a mean of −8.9 ± 1.1‰. The δ<sup>15</sup>N values range from 8.9‰ to 14.1‰ (<em>n</em> = 42), with a mean of 9.8 ± 0.9‰.</p>
+</blockquote>
+<p>Looking at my recreation of Figure 3, we also find the 3 outlier human samples in the δ<sup>15</sup>N analysis. Among these individuals (QJP232, QJP240 and QJP236), QJP232 and QJP240 were considered extreme outliers. Moreover, the researchers state that:</p>
+<blockquote class="blockquote">
+<p>The enrichment of 6.7‰ (QJP232) is too high to be interpreted as the difference of a single trophic level.</p>
+</blockquote>
+<p>Although δ<sup>13</sup>C and δ<sup>15</sup>N isotope ratios are not commonly used to trace human mobility, the researchers conclude that a possible theory explaining these outlier values is that “both QJP232 and QJP240 moved from surrounding areas where people ate different diets.”</p>
+</section>
+<section id="inferential-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h3>
+<p>The researchers were also interested to see if there were importantδ<sup>13</sup>C and δ<sup>15</sup>N differences between adults and sub-adults (16 years and below). In the paper, they state:</p>
+<blockquote class="blockquote">
+<p>No significant isotopic differences were found between subadults and adults (<strong>Z = −0.737, P = 0.461 for δ<sup>13</sup>C and Z = −0.913, P = 0.361 for δ<sup>15</sup>N</strong>), a result indicating that the dietary difference between subadults and adults is not statistically significant.</p>
+</blockquote>
+<p>In the methods section, they describe that:</p>
+<blockquote class="blockquote">
+<p>Differences in mean isotope values among age groups and different sites were determined with Mann–Whitney tests. The significance level was set at <em>p</em> &lt; 0.05. All statistical analyses were performed with SPSS15.0 for Windows (SPSS, USA).</p>
+</blockquote>
+<p>With that, let’s get into our Mann-Whitney test!</p>
+<p>First, let’s see the layout of the dataset we’ll be using:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Lab_code Species      d13C  d15N
+  &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+1 QJP211   adult human  -9.6   9.8
+2 QJP212   adult human  -9.1   9.8
+3 QJP214   adult human  -7.5   9  
+4 QJP215   adult human  -8.2  10  
+5 QJP217   adult human  -8.4   9.3
+6 QJP218   adult human -10.7   9.6</code></pre>
+</div>
+</div>
+<p>We can use the <code>wilcox.test()</code> to run a two-sample Wilcoxon test which is also known as ‘Mann-Whitney’ test.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mann_test_c <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d13C <span class="sc">~</span> <span class="fu">as.factor</span>(Species), <span class="co"># Establishing Species as factor</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>mann_test_c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  d13C by as.factor(Species)
+W = 108, p-value = 0.3768
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>Did the same thing for nitrogen values:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>mann_test_n <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d15N <span class="sc">~</span> <span class="fu">as.factor</span>(Species),</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>mann_test_n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  d15N by as.factor(Species)
+W = 167.5, p-value = 0.3188
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>Here’s when I noticed 2 things:</p>
+<ol type="1">
+<li>The test outputs a Z score while my <code>wilcox.test()</code> spits out a W score.</li>
+<li>My p-values do not match the ones reported by the study, although they both report non-significant (p&gt;0.05) values.</li>
+</ol>
+<p>I wanted to first address the Z-score problem by figuring out how I can derive it from the output that I got. After some digging, I came across this formula to convert W to Z score:</p>
+<p><span class="math display">\[
+Z = \frac{W - \mu_W}{\sigma_W}
+\]</span></p>
+<p>Where μW​ is the <strong>mean</strong> of the W statistic under the null hypothesis and σW​ is the standard deviation of W under the null hypothesis.</p>
+<p><span class="math display">\[
+μW​=\frac{n1​⋅n2}{2}​​
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\sigma_W = \sqrt{ \frac{n_1 \cdot n_2 \cdot (n_1 + n_2 + 1)}{12} }
+\]</span></p>
+<p>Making the Z score calculation:</p>
+<p><span class="math display">\[
+Z = \frac{W - \frac{n_1 n_2}{2}}{\sqrt{ \frac{n_1 n_2 (n_1 + n_2 + 1)}{12} }}
+\]</span></p>
+<p>source: <a href="https://datatab.net/tutorial/mann-whitney-u-test" class="uri">https://datatab.net/tutorial/mann-whitney-u-test</a></p>
+<p>So with that, let’s first find out the number of subadult and adult samples I have which should be 8 and 34 respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>young_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_young =</span> <span class="fu">case_when</span>(</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"sub-adult human"</span> <span class="sc">~</span> d13C,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_isotope<span class="sc">$</span>d13C_young</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(young_human_carbon)]</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">length</span>(young_human_carbon)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>n1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>adult_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_adult =</span> <span class="fu">case_when</span>(</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"adult human"</span> <span class="sc">~</span> d13C,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_isotope<span class="sc">$</span>d13C_adult</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(adult_human_carbon)]</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">length</span>(adult_human_carbon)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 34</code></pre>
+</div>
+</div>
+<p>Now let’s run the W to Z conversion formula:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>W_c <span class="ot">&lt;-</span> mann_test_c<span class="sc">$</span>statistic</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>W_n <span class="ot">&lt;-</span> mann_test_n<span class="sc">$</span>statistic</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>z_score_c <span class="ot">&lt;-</span> (W_c <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>z_score_n <span class="ot">&lt;-</span> (W_n <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And concatenate the results in a nice printout:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ13C Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>δ13C Mann-Whitney U Test Results:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>W-statistic: 108 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_c, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Z-score: -0.897 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_c<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value: 0.376845 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ15N Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>δ15N Mann-Whitney U Test Results:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_n, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>W-statistic: 167.5 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_n, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Z-score: 1.009 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_n<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value: 0.3188378 </code></pre>
+</div>
+</div>
+<p>Here’s the values provided by the paper:</p>
+<blockquote class="blockquote">
+<p>Z = −0.737, P = 0.461 for δ<sup>13</sup>C</p>
+<p>Z = −0.913, P = 0.361 for δ<sup>15</sup>N</p>
+</blockquote>
+<p>While my values are different, the inference is the same! Both values show that dietary differences between subadults and adults are not statistically significant.</p>
+<p>To understand why my values differ from the Dong et al.&nbsp;(2013) results, I re-read the paper and noticed that they use SPSS to calculate the Mann Whitney test. However, according to these sources below, there might not be an important difference in the calculation that might result in this discrepancy.</p>
+<p><a href="https://datatab.net/tutorial/wilcoxon-test" class="uri">https://datatab.net/tutorial/wilcoxon-test</a></p>
+<p><a href="https://www.spss-tutorials.com/spss-mann-whitney-test-simple-example/" class="uri">https://www.spss-tutorials.com/spss-mann-whitney-test-simple-example/</a></p>
+<p>I also manually calculated the Mann Whitney U test using this website and it extremely similar values to what came out in R.</p>
+<p>Therefore, the cause might lie in the data. Before running the Mann Whitney U test, I made sure that I had the correct sample of adults and subadults which were 34 and 8 respectively. I made this separation based on the 16 year old threshold stated by the paper. In theory, I should have the same sample and the test should yield near identical W and Z scores. This discrepancy therefore could be attributed to the accuracy of the isotope values - e.g decimal places - for each sample.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
