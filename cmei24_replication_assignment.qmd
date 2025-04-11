@@ -1,11 +1,11 @@
 ---
-title: "cmei_replication_assignment"
+title: "Re-analysis of Dong et al. (2013) – Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China"
 author: "Christian Mei"
 format: html
 editor: visual
 ---
 
-# Re-analysis of Dong et al. (2013) – Stable Isotope Analysis of Human and Animal Remains at the Qijiaping Site in Middle Gansu, China
+![Bronze mirror, Gansu. Qijia culture (2400–1900) National Museum of China.](images/clipboard-353649242.png){fig-align="center" width="773"}
 
 ## Objectives
 
