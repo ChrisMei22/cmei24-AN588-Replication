@@ -5,7 +5,7 @@ format: html
 editor: visual
 ---
 
-![Bronze mirror, Gansu. Qijia culture (2400–1900) National Museum of China.](images/clipboard-353649242.png){fig-align="center" width="773"}
+![Bronze mirror found in Gansu province, China. It is attributed to the Qijia culture (2400–1900) and is currently at the National Museum of China.](images/clipboard-353649242.png){fig-align="center" width="773"}
 
 ## Objectives
 
@@ -13,7 +13,7 @@ The point of this exercise is to replicate some of the analyses and figures cent
 
 ## Background
 
-During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that travelled through the Hexi Corridor at around 2000 BC.
+During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that traveled through the Hexi Corridor at around 2000 BC.
 
 A cultural complex associated with this geographical and chronological region is the Qijia culture, named after the Qijiaping site (see map below) excavated in 1934 and 1975. This later excavation led to the collection of many human and animal skeletons along with cultural artifacts such as pottery, stone and bone tools and an earlt Chinese bronze mirror. This more comprehensive collection provided the researchers the opportunity to take a closer look at the human and animal remains to reconstruct their diets. The idea is that through exploration of their diets, they would be able to find evidence of an exchange of eastern and western cereals. If there was a strong western cereal influence in this region, then they would hypothesize a higher presence of barley in the human and animal diets.
 
