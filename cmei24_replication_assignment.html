@@ -135,7 +135,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/clipboard-353649242.png" class="img-fluid figure-img" width="773"></p>
-<figcaption>Bronze mirror, Gansu. Qijia culture (2400–1900) National Museum of China.</figcaption>
+<figcaption>Bronze mirror found in Gansu province, China. It is attributed to the Qijia culture (2400–1900) and is currently at the National Museum of China.</figcaption>
 </figure>
 </div>
 <section id="objectives" class="level2">
@@ -144,7 +144,7 @@ window.Quarto = {
 </section>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
-<p>During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that travelled through the Hexi Corridor at around 2000 BC.</p>
+<p>During the late prehistoric period, there were large intercontinental exchanges between communities across Eurasia. These were mainly characterized by long-distance movements of metallurgic goods, livestock, and crops. However, when and where these exchanges happened is still subject to more study. This paper focuses on the Hexi Corridor in China, a pathway between east and west Eurasia, as a potential location where such long-distance exchange of goods happened. There is speculation that the barley remains, sheep/goat, and cattle bones found in southwest Asia were imports from the west that traveled through the Hexi Corridor at around 2000 BC.</p>
 <p>A cultural complex associated with this geographical and chronological region is the Qijia culture, named after the Qijiaping site (see map below) excavated in 1934 and 1975. This later excavation led to the collection of many human and animal skeletons along with cultural artifacts such as pottery, stone and bone tools and an earlt Chinese bronze mirror. This more comprehensive collection provided the researchers the opportunity to take a closer look at the human and animal remains to reconstruct their diets. The idea is that through exploration of their diets, they would be able to find evidence of an exchange of eastern and western cereals. If there was a strong western cereal influence in this region, then they would hypothesize a higher presence of barley in the human and animal diets.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -288,8 +288,8 @@ window.Quarto = {
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column 'Species' based on conditions in 'age_years'</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>human_isotope_new <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Species =</span> <span class="fu">case_when</span>(</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"adult"</span>, <span class="st">"40–50"</span>, <span class="st">"20–25"</span>, <span class="st">"~40"</span>, <span class="st">"45–50"</span>, <span class="st">"18–20"</span>, <span class="st">"18–22"</span>, <span class="st">"20–15"</span>) <span class="sc">~</span> <span class="st">"adult human"</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"juvenile"</span>, <span class="st">"13–14"</span>, <span class="st">"12–16"</span>, <span class="st">"11–13"</span>, <span class="st">"7–8"</span>, <span class="st">"11–16"</span>) <span class="sc">~</span> <span class="st">"sub-adult human"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"adult"</span>, <span class="st">"40–50"</span>, <span class="st">"20–25"</span>, <span class="st">"~40"</span>, <span class="st">"45–50"</span>, <span class="st">"18–20"</span>, <span class="st">"18–22"</span>, <span class="st">"20–15"</span>) <span class="sc">~</span> <span class="st">"Adult human"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    age_years <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"juvenile"</span>, <span class="st">"13–14"</span>, <span class="st">"12–16"</span>, <span class="st">"11–13"</span>, <span class="st">"7–8"</span>, <span class="st">"11–16"</span>) <span class="sc">~</span> <span class="st">"Sub-adult human"</span>,</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"unknown"</span>  <span class="co"># Optional: Assign "unknown" if the value doesn't match any category</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ))</span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
@@ -300,46 +300,69 @@ window.Quarto = {
 <pre><code># A tibble: 6 × 4
   Lab_code Species      d13C  d15N
   &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
-1 QJP211   adult human  -9.6   9.8
-2 QJP212   adult human  -9.1   9.8
-3 QJP214   adult human  -7.5   9  
-4 QJP215   adult human  -8.2  10  
-5 QJP217   adult human  -8.4   9.3
-6 QJP218   adult human -10.7   9.6</code></pre>
+1 QJP211   Adult human  -9.6   9.8
+2 QJP212   Adult human  -9.1   9.8
+3 QJP214   Adult human  -7.5   9  
+4 QJP215   Adult human  -8.2  10  
+5 QJP217   Adult human  -8.4   9.3
+6 QJP218   Adult human -10.7   9.6</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>animal_isotope_new <span class="ot">&lt;-</span> animal_isotope <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">d13C =</span> <span class="st">`</span><span class="at">δ13C</span><span class="st">`</span>, <span class="at">d15N =</span> <span class="st">`</span><span class="at">δ15N</span><span class="st">`</span>) <span class="sc">%&gt;%</span> <span class="co"># For animals, we're only going to change the delta column names</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Lab_code, Species, d13C, d15N)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(animal_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Species =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="st">"Pig_subadult"</span> <span class="sc">~</span> <span class="st">"Young Pig"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="st">"Pig_adult"</span> <span class="sc">~</span> <span class="st">"Adult Pig"</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span><span class="sc">~</span> Species</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  ))<span class="sc">%&gt;%</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Lab_code, Species, d13C, d15N)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>animal_isotope_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  Lab_code Species       d13C  d15N
-  &lt;chr&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;
-1 QJP253   Pig_subadult  -8     8.1
-2 QJP254   Pig_subadult  -8.3   7.6
-3 QJP262   Pig_subadult  -9.2   7.1
-4 QJP263   Pig_subadult  -7.1   8.7
-5 QJP255   Pig_adult    -17.5   6  
-6 QJP256   Pig_adult     -7.9   7.3</code></pre>
+<pre><code># A tibble: 19 × 4
+   Lab_code Species    d13C  d15N
+   &lt;chr&gt;    &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
+ 1 QJP253   Young Pig  -8     8.1
+ 2 QJP254   Young Pig  -8.3   7.6
+ 3 QJP262   Young Pig  -9.2   7.1
+ 4 QJP263   Young Pig  -7.1   8.7
+ 5 QJP255   Adult Pig -17.5   6  
+ 6 QJP256   Adult Pig  -7.9   7.3
+ 7 QJP257   Adult Pig -10     7.4
+ 8 QJP264   Adult Pig  -9.8   7.2
+ 9 QJP265   Adult Pig -13     7.2
+10 QJP270   Dog       -10.7   7.6
+11 QJP271   Dog       -10.2   7.6
+12 QJP266   Horse     -16.3   6.7
+13 QJP267   Horse     -17.4   8.5
+14 QJP258   Cattle    -16.1   7.1
+15 QJP259   Cattle    -17.2   7.7
+16 QJP260   Cattle    -17.8   8.2
+17 QJP261   Cattle    -15.8   6.9
+18 QJP268   Cattle    -17.4   6.7
+19 QJP269   Cattle    -13     6.9</code></pre>
 </div>
 </div>
 <p>Since we will need to create a scatterplot incorporating both animal and human data, I decided to merge both datasets into a big one.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>merged_data_set <span class="ot">&lt;-</span> <span class="fu">rbind</span>(human_isotope_new, animal_isotope_new)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(merged_data_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>merged_data_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 4
-  Lab_code Species      d13C  d15N
-  &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
-1 QJP211   adult human  -9.6   9.8
-2 QJP212   adult human  -9.1   9.8
-3 QJP214   adult human  -7.5   9  
-4 QJP215   adult human  -8.2  10  
-5 QJP217   adult human  -8.4   9.3
-6 QJP218   adult human -10.7   9.6</code></pre>
+<pre><code># A tibble: 61 × 4
+   Lab_code Species      d13C  d15N
+   &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
+ 1 QJP211   Adult human  -9.6   9.8
+ 2 QJP212   Adult human  -9.1   9.8
+ 3 QJP214   Adult human  -7.5   9  
+ 4 QJP215   Adult human  -8.2  10  
+ 5 QJP217   Adult human  -8.4   9.3
+ 6 QJP218   Adult human -10.7   9.6
+ 7 QJP219   Adult human  -8.6   9.2
+ 8 QJP220   Adult human  -8.4   9.2
+ 9 QJP222   Adult human  -8.1   9.3
+10 QJP223   Adult human -11     9.6
+# ℹ 51 more rows</code></pre>
 </div>
 </div>
 <p>I also turned the Species column as a factor to facilitate labeling when plotting the scatterplot.</p>
@@ -349,7 +372,7 @@ window.Quarto = {
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [61 × 4] (S3: tbl_df/tbl/data.frame)
  $ Lab_code: chr [1:61] "QJP211" "QJP212" "QJP214" "QJP215" ...
- $ Species : Factor w/ 7 levels "adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Species : Factor w/ 7 levels "Adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
  $ d13C    : num [1:61] -9.6 -9.1 -7.5 -8.2 -8.4 -10.7 -8.6 -8.4 -8.1 -11 ...
  $ d15N    : num [1:61] 9.8 9.8 9 10 9.3 9.6 9.2 9.2 9.3 9.6 ...</code></pre>
 </div>
@@ -359,11 +382,23 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="step-3-recreating-figure-2">Step 3) Recreating Figure 2</h3>
 <p>It’s time to recreate Figure 2 from the paper. This scatterplot is meant to map both carbon and nitrogen isotope signals for each sample. Instead of using shapes to determine the different species, I stuck to colors. The resulting figure fully recapitulates what is seen in the paper. See below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data_set, <span class="fu">aes</span>(<span class="at">x =</span> d13C, <span class="at">y =</span> d15N, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>  <span class="co"># Removed fill, used color inside aes()</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">y =</span> <span class="st">"δ15N (‰)"</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">5</span>,<span class="dv">15</span>) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">19</span>,<span class="sc">-</span><span class="dv">6</span>) <span class="sc">+</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>merged_data_set<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(merged_data_set<span class="sc">$</span>Species, <span class="at">levels =</span> <span class="fu">c</span>( <span class="co"># re-level the Species so that they appear in teh order that I want</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Adult human"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Sub-adult human"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Adult Pig"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Young Pig"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Dog"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Horse"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Cattle"</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>label_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(merged_data_set, Species <span class="sc">==</span> <span class="st">"Adult human"</span> <span class="sc">&amp;</span> d15N <span class="sc">&gt;</span> <span class="dv">11</span>) <span class="co"># Find the datapoints that are labeled. These were Adult humans that had unusually high nitrogen values</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data_set, <span class="fu">aes</span>(<span class="at">x =</span> d13C, <span class="at">y =</span> d15N, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span>  <span class="co"># Removed fill, used color inside aes()</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">y =</span> <span class="st">"δ15N (‰)"</span>) <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> label_data, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="co"># Label the datapoints of interest and use vjust and hjust to vertically and horizontally set where the label should be.</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -378,26 +413,54 @@ window.Quarto = {
 <p><img src="images/clipboard-573905272.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="670"></p>
 </figure>
 </div>
-<p>Based on this figure, we can see that based on δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.</p>
+<p>The reason I decided to stick with colors instead of shapes and fillings was that ggplot for some reason would delete information whenever I used <code>shape = Species</code>. I also tried to manually give specific shapes and fillings for each Species but no matter what I tried I always had the same issue. The program would issue the following warning:</p>
+<blockquote class="blockquote">
+<p>Warning: [38;5;232mRemoved 8 rows containing missing values or values outside the scale range (`geom_point()`).[39m</p>
+</blockquote>
+<p>This would remove all sub-adult human values</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(merged_data_set, <span class="fu">aes</span>(<span class="at">x =</span> d13C, <span class="at">y =</span> d15N, <span class="at">shape =</span> Species)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">y =</span> <span class="st">"δ15N (‰)"</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The shape palette can deal with a maximum of 6 discrete values because more
+than 6 becomes difficult to discriminate
+ℹ you have requested 7 values. Consider specifying shapes manually if you need
+  that many have them.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 6 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Moving on, based on the plotted δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.</p>
 </section>
 <section id="descriptive-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h3>
 <p>The researchers then take a closer look at the carbon and nitrogen isotope values when they are categorized by their diet class. To do this, I decided to create a new column called <code>Animal_diet_class</code> where <em>Humans</em> were their own category; pig and dog were considered <em>Omnivores;</em> and horse and cattle were annotated as <em>Herbivore</em>. I will be recreating Figure 3 and Table 4.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data <span class="ot">&lt;-</span> merged_data_set <span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Animal_diet_class =</span> <span class="fu">case_when</span>(</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"adult human"</span>, <span class="st">"sub-adult human"</span>) <span class="sc">~</span> <span class="st">"Human"</span>,</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Pig_adult"</span>, <span class="st">"Pig_subadult"</span>, <span class="st">"Dog"</span>) <span class="sc">~</span> <span class="st">"Omnivore"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cattle"</span>, <span class="st">"Horse"</span>) <span class="sc">~</span> <span class="st">"Herbivore"</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"unknown"</span>  <span class="co"># Optional: Assign "unknown" if the value doesn't match any category</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data<span class="sc">$</span>Animal_diet_class <span class="ot">&lt;-</span> <span class="fu">factor</span>(isotope_barplot_data<span class="sc">$</span>Animal_diet_class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Human"</span>, <span class="st">"Omnivore"</span>, <span class="st">"Herbivore"</span>)) <span class="co">#factor and relevel using the level argument so that diet classes appear in the order shown in the original figure</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(isotope_barplot_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data <span class="ot">&lt;-</span> merged_data_set <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Animal_diet_class =</span> <span class="fu">case_when</span>(</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adult human"</span>, <span class="st">"Sub-adult human"</span>) <span class="sc">~</span> <span class="st">"Human"</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Adult Pig"</span>, <span class="st">"Young Pig"</span>, <span class="st">"Dog"</span>) <span class="sc">~</span> <span class="st">"Omnivore"</span>,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Cattle"</span>, <span class="st">"Horse"</span>) <span class="sc">~</span> <span class="st">"Herbivore"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"unknown"</span>  <span class="co"># Optional: Assign "unknown" if the value doesn't match any category</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>isotope_barplot_data<span class="sc">$</span>Animal_diet_class <span class="ot">&lt;-</span> <span class="fu">factor</span>(isotope_barplot_data<span class="sc">$</span>Animal_diet_class, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Human"</span>, <span class="st">"Omnivore"</span>, <span class="st">"Herbivore"</span>)) <span class="co">#factor and relevel using the level argument so that diet classes appear in the order shown in the original figure</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(isotope_barplot_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [61 × 5] (S3: tbl_df/tbl/data.frame)
  $ Lab_code         : chr [1:61] "QJP211" "QJP212" "QJP214" "QJP215" ...
- $ Species          : Factor w/ 7 levels "adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Species          : Factor w/ 7 levels "Adult human",..: 1 1 1 1 1 1 1 1 1 1 ...
  $ d13C             : num [1:61] -9.6 -9.1 -7.5 -8.2 -8.4 -10.7 -8.6 -8.4 -8.1 -11 ...
  $ d15N             : num [1:61] 9.8 9.8 9 10 9.3 9.6 9.2 9.2 9.3 9.6 ...
  $ Animal_diet_class: Factor w/ 3 levels "Human","Omnivore",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
@@ -405,71 +468,73 @@ window.Quarto = {
 </div>
 <p>Figure 2 also displays important outliers by their sample ID. To do this we need to extract the <code>Lab_code</code> of the datapoints that lie outside 1.5 × IQR above the third quartile (Q3) or below the first quartile (Q1).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>carbon_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span> <span class="co"># We need this step so that we don't get outliers for the entire dataset</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d13C <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d13C <span class="sc">&gt;</span> upper_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>carbon_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span> <span class="co"># We need this step so that we don't get outliers for the entire dataset</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="co"># Set the limits to find what an outlier means</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d13C, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d13C <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d13C <span class="sc">&gt;</span> upper_bound) <span class="co"># Get values that lie outside of these thresholds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can plot the boxplot using <code>gglopt2</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>box_carbon <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d13C)) <span class="sc">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> carbon_outliers, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>box_carbon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>left_labels <span class="ot">&lt;-</span> <span class="fu">subset</span>(carbon_outliers, Lab_code <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"QJP232"</span>, <span class="st">"QJP223"</span>)) <span class="co"># Since we need to label both in </span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>right_labels <span class="ot">&lt;-</span> <span class="fu">subset</span>(carbon_outliers, <span class="sc">!</span>(Lab_code <span class="sc">%in%</span> left_labels<span class="sc">$</span>Lab_code))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>box_carbon <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d13C)) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ13C (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> right_labels, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> left_labels, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="fl">1.2</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>box_carbon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We will do the same for nitrogen signals!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>nitrogen_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d15N <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d15N <span class="sc">&gt;</span> upper_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>nitrogen_outliers <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(d15N, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">IQR =</span> Q3 <span class="sc">-</span> Q1,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lower_bound =</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">upper_bound =</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(d15N <span class="sc">&lt;</span> lower_bound <span class="sc">|</span> d15N <span class="sc">&gt;</span> upper_bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>box_nitrogen <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d15N)) <span class="sc">+</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ15N (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> nitrogen_outliers, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span> <span class="co"># This was the lazy and easiest way to include the number of samples per group in the boxplot</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">16</span>))</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>box_nitrogen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>box_nitrogen <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(isotope_barplot_data, <span class="fu">aes</span>(<span class="at">x =</span> Animal_diet_class, <span class="at">y =</span> d15N)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, <span class="at">fill =</span> <span class="st">"lightgrey"</span>)<span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"δ15N (‰)"</span>, <span class="at">x =</span> <span class="st">"Diet Class"</span>) <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> nitrogen_outliers, <span class="fu">aes</span>(<span class="at">label =</span> Lab_code), <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Human </span><span class="sc">\n</span><span class="st"> n = 42"</span>, <span class="st">"Omnivores </span><span class="sc">\n</span><span class="st"> (Pig &amp; Dog) </span><span class="sc">\n</span><span class="st"> n = 11"</span>, <span class="st">"Herbivores </span><span class="sc">\n</span><span class="st"> (Cattle &amp; Horse) </span><span class="sc">\n</span><span class="st"> n = 8"</span>)) <span class="sc">+</span> <span class="co"># This was the lazy and easiest way to include the number of samples per group in the boxplot</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">16</span>))</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>box_nitrogen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Now let’s add combine these into a single panel to make it look more like the original</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra) <span class="co"># Used gridExtra for easier merging</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'gridExtra'</code></pre>
@@ -479,36 +544,40 @@ Attaching package: 'gridExtra'</code></pre>
 
     combine</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(box_carbon, box_nitrogen, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>box_carbon <span class="ot">&lt;-</span> box_carbon <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">0</span>)) <span class="co"># Tried my best to keep the margins as small as possible to make both figures appear well but it is harder than it seems</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>box_nitrogen <span class="ot">&lt;-</span> box_nitrogen <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">0</span>))</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(box_carbon, box_nitrogen, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="cmei24_replication_assignment_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This is how Figure 2 looks like in the paper:</p>
 <p><img src="images/clipboard-520538280.png" class="img-fluid"></p>
+<p>I have no clue what the different shapes to the outlier symbols like the asterisk mean and they are not mentioned in the original manuscript.</p>
 <p>To finish this section on the descriptive stats of this paper, we will build a table that will offer the means, SD, and range of our carbon and nitrogen isotope data. The data will also be grouped by diet class</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics for d13C and d15N by diet class</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_size =</span> <span class="fu">length</span>(d13C),</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d13C =</span> <span class="fu">mean</span>(d13C),</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d13C =</span> <span class="fu">sd</span>(d13C),</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d13C =</span> <span class="fu">max</span>(d13C) <span class="sc">-</span> <span class="fu">min</span>(d13C),</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d15N =</span> <span class="fu">mean</span>(d15N),</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d15N =</span> <span class="fu">sd</span>(d15N),</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d15N =</span> <span class="fu">max</span>(d15N) <span class="sc">-</span> <span class="fu">min</span>(d15N)</span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Animal_diet_class)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>summary_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics for d13C and d15N by diet class</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> isotope_barplot_data <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal_diet_class) <span class="sc">%&gt;%</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_size =</span> <span class="fu">length</span>(d13C),</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d13C =</span> <span class="fu">mean</span>(d13C),</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d13C =</span> <span class="fu">sd</span>(d13C),</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d13C =</span> <span class="fu">max</span>(d13C) <span class="sc">-</span> <span class="fu">min</span>(d13C),</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_d15N =</span> <span class="fu">mean</span>(d15N),</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_d15N =</span> <span class="fu">sd</span>(d15N),</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">range_d15N =</span> <span class="fu">max</span>(d15N) <span class="sc">-</span> <span class="fu">min</span>(d15N)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Animal_diet_class)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="co"># View the result</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>summary_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 8
   Animal_diet_class sample_size mean_d13C sd_d13C range_d13C mean_d15N sd_d15N
@@ -547,26 +616,26 @@ Attaching package: 'gridExtra'</code></pre>
 <p>With that, let’s get into our Mann-Whitney test!</p>
 <p>First, let’s see the layout of the dataset we’ll be using:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(human_isotope_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   Lab_code Species      d13C  d15N
   &lt;chr&gt;    &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;
-1 QJP211   adult human  -9.6   9.8
-2 QJP212   adult human  -9.1   9.8
-3 QJP214   adult human  -7.5   9  
-4 QJP215   adult human  -8.2  10  
-5 QJP217   adult human  -8.4   9.3
-6 QJP218   adult human -10.7   9.6</code></pre>
+1 QJP211   Adult human  -9.6   9.8
+2 QJP212   Adult human  -9.1   9.8
+3 QJP214   Adult human  -7.5   9  
+4 QJP215   Adult human  -8.2  10  
+5 QJP217   Adult human  -8.4   9.3
+6 QJP218   Adult human -10.7   9.6</code></pre>
 </div>
 </div>
 <p>We can use the <code>wilcox.test()</code> to run a two-sample Wilcoxon test which is also known as ‘Mann-Whitney’ test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mann_test_c <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d13C <span class="sc">~</span> <span class="fu">as.factor</span>(Species), <span class="co"># Establishing Species as factor</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>mann_test_c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mann_test_c <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d13C <span class="sc">~</span> <span class="fu">as.factor</span>(Species), <span class="co"># Establishing Species as factor</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>mann_test_c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
@@ -578,11 +647,11 @@ alternative hypothesis: true location shift is not equal to 0</code></pre>
 </div>
 <p>Did the same thing for nitrogen values:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>mann_test_n <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d15N <span class="sc">~</span> <span class="fu">as.factor</span>(Species),</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>mann_test_n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>mann_test_n <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(d15N <span class="sc">~</span> <span class="fu">as.factor</span>(Species),</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data =</span> human_isotope_new,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>mann_test_n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Wilcoxon rank sum test with continuity correction
@@ -616,81 +685,81 @@ Z = \frac{W - \frac{n_1 n_2}{2}}{\sqrt{ \frac{n_1 n_2 (n_1 + n_2 + 1)}{12} }}
 <p>source: <a href="https://datatab.net/tutorial/mann-whitney-u-test" class="uri">https://datatab.net/tutorial/mann-whitney-u-test</a></p>
 <p>So with that, let’s first find out the number of subadult and adult samples I have which should be 8 and 34 respectively.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>young_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_young =</span> <span class="fu">case_when</span>(</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"sub-adult human"</span> <span class="sc">~</span> d13C,</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_isotope<span class="sc">$</span>d13C_young</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(young_human_carbon)]</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">length</span>(young_human_carbon)</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>n1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>young_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_young =</span> <span class="fu">case_when</span>(</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"sub-adult human"</span> <span class="sc">~</span> d13C,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_isotope<span class="sc">$</span>d13C_young</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>young_human_carbon <span class="ot">&lt;-</span> young_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(young_human_carbon)]</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">length</span>(young_human_carbon)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>n1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>adult_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_adult =</span> <span class="fu">case_when</span>(</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"adult human"</span> <span class="sc">~</span> d13C,</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_isotope<span class="sc">$</span>d13C_adult</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(adult_human_carbon)]</span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">length</span>(adult_human_carbon)</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>adult_human_isotope <span class="ot">&lt;-</span> human_isotope_new <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">d13C_adult =</span> <span class="fu">case_when</span>(</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    Species <span class="sc">==</span> <span class="st">"adult human"</span> <span class="sc">~</span> d13C,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_isotope<span class="sc">$</span>d13C_adult</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>adult_human_carbon <span class="ot">&lt;-</span> adult_human_carbon[<span class="sc">!</span><span class="fu">is.na</span>(adult_human_carbon)]</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>n2 <span class="ot">&lt;-</span> <span class="fu">length</span>(adult_human_carbon)</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>n2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 34</code></pre>
+<pre><code>[1] 0</code></pre>
 </div>
 </div>
 <p>Now let’s run the W to Z conversion formula:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>W_c <span class="ot">&lt;-</span> mann_test_c<span class="sc">$</span>statistic</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>W_n <span class="ot">&lt;-</span> mann_test_n<span class="sc">$</span>statistic</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>z_score_c <span class="ot">&lt;-</span> (W_c <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>z_score_n <span class="ot">&lt;-</span> (W_n <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>W_c <span class="ot">&lt;-</span> mann_test_c<span class="sc">$</span>statistic</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>W_n <span class="ot">&lt;-</span> mann_test_n<span class="sc">$</span>statistic</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>z_score_c <span class="ot">&lt;-</span> (W_c <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>z_score_n <span class="ot">&lt;-</span> (W_n <span class="sc">-</span> (n1 <span class="sc">*</span> n2 <span class="sc">/</span> <span class="dv">2</span>)) <span class="sc">/</span> <span class="fu">sqrt</span>((n1 <span class="sc">*</span> n2 <span class="sc">*</span> (n1 <span class="sc">+</span> n2 <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And concatenate the results in a nice printout:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ13C Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ13C Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>δ13C Mann-Whitney U Test Results:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_c, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>W-statistic: 108 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_c, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_c, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Z-score: -0.897 </code></pre>
+<pre><code>Z-score: Inf </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_c<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_c<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>p-value: 0.376845 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ15N Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"δ15N Mann-Whitney U Test Results:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>δ15N Mann-Whitney U Test Results:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_n, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"W-statistic:"</span>, W_n, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>W-statistic: 167.5 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_n, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Z-score:"</span>, <span class="fu">round</span>(z_score_n, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Z-score: 1.009 </code></pre>
+<pre><code>Z-score: Inf </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_n<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"p-value:"</span>, mann_test_n<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>p-value: 0.3188378 </code></pre>
 </div>

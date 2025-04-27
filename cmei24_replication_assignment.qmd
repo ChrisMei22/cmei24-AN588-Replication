@@ -89,8 +89,8 @@ human_isotope_new <- human_isotope %>%
 # Create a new column 'Species' based on conditions in 'age_years'
 human_isotope_new <- human_isotope_new %>%
   mutate(Species = case_when(
-    age_years %in% c("adult", "40–50", "20–25", "~40", "45–50", "18–20", "18–22", "20–15") ~ "adult human",
-    age_years %in% c("juvenile", "13–14", "12–16", "11–13", "7–8", "11–16") ~ "sub-adult human",
+    age_years %in% c("adult", "40–50", "20–25", "~40", "45–50", "18–20", "18–22", "20–15") ~ "Adult human",
+    age_years %in% c("juvenile", "13–14", "12–16", "11–13", "7–8", "11–16") ~ "Sub-adult human",
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
 
@@ -102,16 +102,21 @@ head(human_isotope_new)
 ```{r}
 animal_isotope_new <- animal_isotope %>%
   rename(d13C = `δ13C`, d15N = `δ15N`) %>% # For animals, we're only going to change the delta column names
+  mutate(Species = case_when(
+    Species %in% "Pig_subadult" ~ "Young Pig",
+    Species %in% "Pig_adult" ~ "Adult Pig",
+    TRUE~ Species
+  ))%>%
   select(Lab_code, Species, d13C, d15N)
 
-head(animal_isotope_new)
+animal_isotope_new
 ```
 
 Since we will need to create a scatterplot incorporating both animal and human data, I decided to merge both datasets into a big one.
 
 ```{r}
 merged_data_set <- rbind(human_isotope_new, animal_isotope_new)
-head(merged_data_set)
+merged_data_set
 ```
 
 I also turned the Species column as a factor to facilitate labeling when plotting the scatterplot.
@@ -126,10 +131,22 @@ str(merged_data_set)
 It's time to recreate Figure 2 from the paper. This scatterplot is meant to map both carbon and nitrogen isotope signals for each sample. Instead of using shapes to determine the different species, I stuck to colors. The resulting figure fully recapitulates what is seen in the paper. See below:
 
 ```{r}
+merged_data_set$Species <- factor(merged_data_set$Species, levels = c( # re-level the Species so that they appear in teh order that I want
+  "Adult human",
+  "Sub-adult human",
+  "Adult Pig",
+  "Young Pig",
+  "Dog",
+  "Horse",
+  "Cattle"
+))
+
+label_data <- subset(merged_data_set, Species == "Adult human" & d15N > 11) # Find the datapoints that are labeled. These were Adult humans that had unusually high nitrogen values
+
 ggplot(merged_data_set, aes(x = d13C, y = d15N, color = Species)) +
-  geom_point() +  # Removed fill, used color inside aes()
+  geom_point(size = 3) +  # Removed fill, used color inside aes()
   labs(x = "δ13C (‰)", y = "δ15N (‰)") +
-  ylim(5,15) + xlim(-19,-6) +
+  geom_text(data = label_data, aes(label = Lab_code), vjust = 0.5, hjust = -0.2, color = "black") + # Label the datapoints of interest and use vjust and hjust to vertically and horizontally set where the label should be.
   theme_minimal()
 ```
 
@@ -137,7 +154,20 @@ Here is the original Figure 2:
 
 ![](images/clipboard-573905272.png){fig-align="center" width="670"}
 
-Based on this figure, we can see that based on δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.
+The reason I decided to stick with colors instead of shapes and fillings was that ggplot for some reason would delete information whenever I used `shape = Species`. I also tried to manually give specific shapes and fillings for each Species but no matter what I tried I always had the same issue. The program would issue the following warning:
+
+> Warning: \[38;5;232mRemoved 8 rows containing missing values or values outside the scale range (\`geom_point()\`).\[39m
+
+This would remove all sub-adult human values
+
+```{r}
+ggplot(merged_data_set, aes(x = d13C, y = d15N, shape = Species)) +
+  geom_point(size = 3) +
+  labs(x = "δ13C (‰)", y = "δ15N (‰)") +
+  theme_minimal()
+```
+
+Moving on, based on the plotted δ13C values, we can reflect 3 diets going from left to right: predominantly C3 , mainly C4 and mixed C3 and C4. We see that cattle and horse samples reflect a predominantly C3 diet, which will important later when we compare δ13C values across animal diets. Based on this general survey, both adult and sub-adult humans have a C4 δ13C signal and a diet higher in protein (δ15N) than animals.
 
 ### Descriptive Statistics
 
@@ -146,8 +176,8 @@ The researchers then take a closer look at the carbon and nitrogen isotope value
 ```{r}
 isotope_barplot_data <- merged_data_set %>%
   mutate(Animal_diet_class = case_when(
-    Species %in% c("adult human", "sub-adult human") ~ "Human",
-    Species %in% c("Pig_adult", "Pig_subadult", "Dog") ~ "Omnivore",
+    Species %in% c("Adult human", "Sub-adult human") ~ "Human",
+    Species %in% c("Adult Pig", "Young Pig", "Dog") ~ "Omnivore",
     Species %in% c("Cattle", "Horse") ~ "Herbivore",
     TRUE ~ "unknown"  # Optional: Assign "unknown" if the value doesn't match any category
   ))
@@ -162,22 +192,26 @@ Figure 2 also displays important outliers by their sample ID. To do this we need
 carbon_outliers <- isotope_barplot_data %>%
   group_by(Animal_diet_class) %>% # We need this step so that we don't get outliers for the entire dataset
   mutate(
-    Q1 = quantile(d13C, 0.25, na.rm = TRUE),
+    Q1 = quantile(d13C, 0.25, na.rm = TRUE), # Set the limits to find what an outlier means
     Q3 = quantile(d13C, 0.75, na.rm = TRUE),
     IQR = Q3 - Q1,
     lower_bound = Q1 - 1.5 * IQR,
     upper_bound = Q3 + 1.5 * IQR
   ) %>%
-  filter(d13C < lower_bound | d13C > upper_bound)
+  filter(d13C < lower_bound | d13C > upper_bound) # Get values that lie outside of these thresholds
 ```
 
 Now we can plot the boxplot using `gglopt2`:
 
 ```{r}
+left_labels <- subset(carbon_outliers, Lab_code %in% c("QJP232", "QJP223")) # Since we need to label both in 
+right_labels <- subset(carbon_outliers, !(Lab_code %in% left_labels$Lab_code))
+
 box_carbon <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d13C)) +
   geom_boxplot(width = 0.25, fill = "lightgrey")+
   labs(y = "δ13C (‰)", x = "Diet Class") +
-  geom_text(data = carbon_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
+  geom_text(data = right_labels, aes(label = Lab_code), vjust = 0.5, hjust = -0.2, color = "black") +
+  geom_text(data = left_labels, aes(label = Lab_code), vjust = 0.5, hjust = 1.2, color = "black") +
   scale_x_discrete(labels = c("Human \n n = 42", "Omnivores \n (Pig & Dog) \n n = 11", "Herbivores \n (Cattle & Horse) \n n = 8")) +
   theme_minimal()
 
@@ -203,12 +237,10 @@ nitrogen_outliers <- isotope_barplot_data %>%
 box_nitrogen <- ggplot(isotope_barplot_data, aes(x = Animal_diet_class, y = d15N)) +
   geom_boxplot(width = 0.25, fill = "lightgrey")+
   labs(y = "δ15N (‰)", x = "Diet Class") +
-  geom_text(data = nitrogen_outliers, aes(label = Lab_code), vjust = -1, color = "black") +
+  geom_text(data = nitrogen_outliers, aes(label = Lab_code), vjust = 0.5, hjust = -0.2, color = "black") +
   theme_minimal() +
   scale_x_discrete(labels = c("Human \n n = 42", "Omnivores \n (Pig & Dog) \n n = 11", "Herbivores \n (Cattle & Horse) \n n = 8")) + # This was the lazy and easiest way to include the number of samples per group in the boxplot
   coord_cartesian(ylim = c(5,16))
-
-
 
 box_nitrogen
 ```
@@ -216,13 +248,18 @@ box_nitrogen
 Now let's add combine these into a single panel to make it look more like the original
 
 ```{r}
-library(gridExtra)
+library(gridExtra) # Used gridExtra for easier merging
+box_carbon <- box_carbon + theme(plot.margin = margin(10, 0, 10, 0)) # Tried my best to keep the margins as small as possible to make both figures appear well but it is harder than it seems
+box_nitrogen <- box_nitrogen + theme(plot.margin = margin(10, 0, 10, 0))
+
 grid.arrange(box_carbon, box_nitrogen, ncol = 2)
 ```
 
 This is how Figure 2 looks like in the paper:
 
 ![](images/clipboard-520538280.png)
+
+I have no clue what the different shapes to the outlier symbols like the asterisk mean and they are not mentioned in the original manuscript.
 
 To finish this section on the descriptive stats of this paper, we will build a table that will offer the means, SD, and range of our carbon and nitrogen isotope data. The data will also be grouped by diet class
 
